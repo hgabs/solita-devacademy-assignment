@@ -1,0 +1,6 @@
+[submodule "solita-dev-academy-2022-fall-backend"]
+	path = solita-dev-academy-2022-fall-backend
+	url = https://github.com/hgabs/solita-dev-academy-2022-fall-backend.git
+[submodule "solita-dev-academy-2022-fall-frontend"]
+	path = solita-dev-academy-2022-fall-frontend
+	url = https://github.com/hgabs/solita-dev-academy-2022-fall-frontend.git
