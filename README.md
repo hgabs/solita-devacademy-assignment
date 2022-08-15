@@ -30,7 +30,7 @@ Download the follwing CSV files to the data folder in the backend repository.
 
 #### 4. Parse and Save CSV Data to Database
 
->docker exec -it solita-api-1 npm run csv:import
+>docker exec -it devacademy-api-1 npm run csv:import
 
 If there are no conflicts with the required ports, you should be able to view the frontend by visiting http://localhost:3000
 
