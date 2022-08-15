@@ -1,19 +1,36 @@
-# solita-devacademy-assignment
+# Solita's Dev Academy Assignment
 
-# Setup
+The application consists of three parts:
 
-1. Install packages in the backend and frontend with:
- 
->***npm install*** 
+- PostgreSQL Database
+- Express.js API back end
+- React.js front end
 
-2. Add a folder named ***data*** to the backend root folder and add the 3 CSV files.
-3. In a PostgreSQL database execute queries in **backend/db/scripts/create.sql**
-3. Configure the environmental variables in the PORT, DB_USER, DB_HOST, DB_NAME and DB_PORT in the .env file.
-4. In the backend folder run ***npm run csv:import*** to import the CSV data.
-5. Start the backend
-   
->npm run dev
+## Deployment
 
-6. Start the frontend:
-   
->npm start
+To deploy the application locally using docker containers, you will need to have **docker-compose** installed. Execute the commands below from the main repository directory.
+
+#### 1. Download CSV
+
+Download the follwing CSV files to the data folder in the backend repository.
+* <https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv>
+* <https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv>
+* <https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv>
+
+
+#### 2. Build Images
+
+>docker-compose build
+
+
+#### 3. Start Containers
+
+>docker-compose up -d
+
+
+#### 4. Parse and Save CSV Data to Database
+
+>docker exec -it solita-api-1 npm run csv:import
+
+If there are no conflicts with the required ports, you should be able to view the frontend by visiting http://localhost:3000
+
