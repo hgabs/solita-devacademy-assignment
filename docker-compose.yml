@@ -1,0 +1,30 @@
+version: "2.9"
+services:
+  web:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+  api:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: 8000
+      DB_USER: postgres
+      DB_PASSWORD: topsecret!
+      DB_HOST: db
+      DB_NAME: postgres
+      DB_PORT: 5432
+  db:
+    image: postgres:latest
+    ports:
+      - 5433:5432
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: topsecret!
+    volumes:
+      - solitadev:/var/lib/postgresql/data
+      - ./backend/db/scripts/create.sql:/docker-entrypoint-initdb.d/create.sql
+volumes:
+  solitadev:
