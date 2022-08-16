@@ -1,5 +1,7 @@
 # Solita's Dev Academy Assignment
 
+![App Image Preview](https://github.com/hgabs/solita-devacademy-assignment/raw/master/app.png)
+
 The application consists of three parts:
 
 - PostgreSQL Database
