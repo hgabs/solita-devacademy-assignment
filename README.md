@@ -1,4 +1,4 @@
-# Solita's Dev Academy Assignment
+# Helsinki City Bike App
 
 ![App Image Preview](https://github.com/hgabs/solita-devacademy-assignment/raw/master/app.png)
 
@@ -14,7 +14,9 @@ To deploy the application locally using docker containers, you will need to have
 
 #### 1. Clone the Repository and its Submodule
 
->git clone --recurse-submodules https://github.com/hgabs/solita-devacademy-assignment.git
+```console
+$ git clone --recurse-submodules https://github.com/hgabs/solita-devacademy-assignment.git
+```
 
 #### 1. Download CSV files
 
@@ -23,18 +25,28 @@ Download the follwing CSV files to the data folder in the backend repository.
 * <https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv>
 * <https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv>
 
->curl -L -O https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv -O https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv -O https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv
+Using **curl** type as follows:
+
+```console
+$ curl -L -O https://dev.hsl.fi/citybikes/od-trips-2021/2021-05.csv -O https://dev.hsl.fi/citybikes/od-trips-2021/2021-06.csv -O https://dev.hsl.fi/citybikes/od-trips-2021/2021-07.csv
+```
 
 #### 2. Build Images
 
->docker-compose build
+```consle
+$ docker-compose build
+```
 
 #### 3. Start Containers
 
->docker-compose up -d
+```console
+$ docker-compose up -d
+```
 
 #### 4. Parse and Save CSV Data to Database
 
->docker exec -it \<api-container-name\> npm run csv:import
+```console
+$ docker exec -it <api-container-name> npm run csv:import
+```
 
 If there are no conflicts with the required ports, you should be able to view the frontend by visiting http://localhost:3000
